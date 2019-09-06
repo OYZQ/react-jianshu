@@ -57,6 +57,22 @@ export const NavSearch = styled.input.attrs({
     box-sizing:border-box;
     font-size:14px;
     color:#666;
+    &.slide-enter {
+        width:160px;
+        transition: all .2s ease-out;
+    }
+    &.slide-enter-active {
+        width:200px;
+
+    }
+    &.slide-exit {
+        width:200px;
+        transition: all .2s ease-out;
+    }
+    &.slide-exit-active {
+        width:160px;
+        
+    }
     &::placeholder {
         color:#999;
     }
@@ -92,22 +108,6 @@ export const Button = styled.div`
 export const SearchWrapper = styled.div`
     position:relative;
     float:left;
-    .slide-enter {
-        width:160px;
-        transition: all .2s ease-out;
-    }
-    .slide-enter-active {
-        width:200px;
-
-    }
-    .slide-exit {
-        width:200px;
-        transition: all .2s ease-out;
-    }
-    .slide-exit-active {
-        width:160px;
-        
-    }
     .iconfont {
         position:absolute;
         right:5px;
