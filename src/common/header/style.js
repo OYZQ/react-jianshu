@@ -99,8 +99,18 @@ export const SearchInfoTitle = styled.div`
 `
 export const SearchInfoSwitch = styled.span`
     float: right;
-    font-size:13px;
+    font-size:13px;;
+    cursor: pointer
+    .spin {
+        display:block;
+        float:left;
+        font-size:12px;
+        margin-right:2px;
+        transition:all .2s ease-in;
+        transfrom-origin:center center;
+    }
 `
+
 export const SearchInfoList = styled.div`
     overflow:hidden;
     padding:10px 0;
@@ -146,7 +156,7 @@ export const Button = styled.div`
 export const SearchWrapper = styled.div`
     position:relative;
     float:left;
-    .iconfont {
+    .zoom {
         position:absolute;
         right:5px;
         bottom:5px;
