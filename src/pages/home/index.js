@@ -4,6 +4,7 @@ import Topic from './components/Topic'
 import List from './components/List'
 import Recomment from './components/Recomment'
 import Writer from './components/Writer'
+import Author from './components/Author'
 
 class Home extends Component {
     render() {
@@ -11,14 +12,16 @@ class Home extends Component {
             <HomeWrapper>
                 <HomeLeft>
                     <div className="height">
-                        <img className="banner-img" src="https://upload-images.jianshu.io/upload_images/5440469-51c9d22950008274.png?imageMogr2/auto-orient/strip|imageView2/2/w/564/format/webp"></img>
+                        <img className="banner-img" src="https://img1.doubanio.com/dae/niffler/niffler/images/4561e346-a48b-11e9-b0de-0242ac11002b.jpg" alt=''></img>
                     </div>
                     <Topic/>
                     <List/>
-                    <Recomment/>
-                    <Writer/>
                 </HomeLeft>
-                <HomeRight>right</HomeRight>
+                <HomeRight>
+                    <Recomment/>   
+                    <Writer/>
+                    <Author/>
+                </HomeRight>
             </HomeWrapper>
         )
     }
