@@ -38,9 +38,6 @@ class Author extends  Component {
     }
 }
 
-// const mapState = ((state) => {
-//     list:state.getIn('home').get('authorList')
-// })
 const mapState = (state) => ({
     list:state.getIn(['home','authorList'])
 })

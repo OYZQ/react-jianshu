@@ -119,3 +119,15 @@ const mapDispathToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps,mapDispathToProps)(Header);
+
+var execFunc = function(){
+    console.log("executed");
+};
+
+setTimeout(execFunc,0);
+
+console.log("changed");
+
+execFunc = function(){
+    console.log("another executed");
+}
