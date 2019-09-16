@@ -12,9 +12,9 @@ class App extends Component {
     return (
      <Provider store={store}>
        <Globalstyle/>
-        <Header/>
         <BrowserRouter>
          <div>
+          <Header/>
           <Route path='/' exact component={Home}></Route>
           <Route path='/detail' exact component= {Detail}></Route>
          </div>
