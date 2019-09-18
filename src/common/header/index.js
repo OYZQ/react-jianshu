@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {CSSTransition} from 'react-transition-group'
 import {HeaderWrapper,Logo,Nav,NavItem,NavSearch,Addition,Button,SearchWrapper,SearchInfo,SearchInfoTitle,SearchInfoSwitch,SearchInfoItem,SearchInfoList} from './style'
 import  {actionCreators}   from './store'
+import { actionCreators as loginActionCreators} from '../../pages/login/store' 
 
 class Header extends Component {
 
@@ -41,7 +42,7 @@ class Header extends Component {
     }
 
     render () {
-        const { focused,handleInputFocus,handleInputBlur,list } = this.props;
+        const { focused,handleInputFocus,handleInputBlur,list,login,loginOut } = this.props;
         return (
         <HeaderWrapper>
             <Link to='/'>
@@ -50,7 +51,9 @@ class Header extends Component {
             <Nav>
                 <NavItem className='left action'>首页</NavItem>
                 <NavItem className='left'>下载App</NavItem>
-                <NavItem className='right'>登录</NavItem>
+                {
+                    login ?  <NavItem className='right' onClick={loginOut}>退出</NavItem>:<Link to='/login'><NavItem className='right'>登录</NavItem></Link>
+                }
                 <NavItem className='right'>
                     <i className="iconfont">&#xe655;</i>
                 </NavItem>
@@ -83,7 +86,8 @@ const mapStateToProps = (state) => {
         list: state.getIn(['header','list']),
         page: state.getIn(['header','page']),
         mouseIn: state.getIn(['header','mouseIn']),
-        totalPage:state.getIn(['header','totalPage'])
+        totalPage:state.getIn(['header','totalPage']),
+        login:state.getIn(['login','login'])
     }
 }
 
@@ -118,6 +122,9 @@ const mapDispathToProps = (dispatch) => {
                 dispatch(actionCreators.changePage(1))
             }
         },
+        loginOut() {
+            dispatch(loginActionCreators.loginOut())
+        }
     }
 }
 
@@ -129,7 +136,6 @@ var execFunc = function(){
 
 setTimeout(execFunc,0);
 
-console.log("changed");
 
 execFunc = function(){
     console.log("another executed");
