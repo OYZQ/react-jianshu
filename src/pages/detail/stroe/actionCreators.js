@@ -12,6 +12,8 @@ export const getDetail = (id) => {
         Axios.get('/api/detail.json?id='+id).then((res) => {
             const result = res.data.data
             dispatch(changeDetail(result.title,result.content))
+        }).catch(()=>{
+            
         })
     }
 }
