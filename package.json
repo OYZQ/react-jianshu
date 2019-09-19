@@ -2,6 +2,8 @@
   "name": "jianshu",
   "version": "0.1.0",
   "private": true,
+  "homepage":".",
+  "proxy":"https://localhost:3000/api",
   "dependencies": {
     "axios": "^0.19.0",
     "immutable": "^4.0.0-rc.12",
